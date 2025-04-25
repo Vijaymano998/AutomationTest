@@ -320,8 +320,9 @@ public class AudiencePage_Upload extends HomePage
 	// Audience Upload file select csv ,xml
 	public AudiencePage_Upload audience_upload_File(String fileName)
 	{
-		String file = detectFilePath(BaseTest.curr_Dir + "\\src\\main\\resources" + "\\data\\uploadfiles\\" + fileName);
-		sendValues(AudienceRepository.audience_fileupload, file);
+		String path = BaseTest.extractResourceToTempFile("data\\uploadfiles\\" + fileName, ".xlsx");
+//		String file = detectFilePath(BaseTest.curr_Dir + "\\src\\main\\resources" + "\\data\\uploadfiles\\" + fileName);
+		sendValues(AudienceRepository.audience_fileupload, path);
 		String columnHeaderText = getStrText(AudienceRepository.audience_columnheadertext);
 		uiPageEqualswithInputValue(columnHeaderText, "Use the first row as the column header");
 		String checkboxStatus = getTextBoxVal(AudienceRepository.audience_helptextcheckbox, "value");
