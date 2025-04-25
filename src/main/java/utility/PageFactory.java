@@ -189,10 +189,4 @@ public class PageFactory
 		return new AudienceNegativeScenarios(driver, page, this);
 
 	}
-
-	public pages.AccountSetupPage_4_8_8 AccountSetupPage_4_8_8()
-	{
-		return new pages.AccountSetupPage_4_8_8(driver, page, this);
-	}
-
 }

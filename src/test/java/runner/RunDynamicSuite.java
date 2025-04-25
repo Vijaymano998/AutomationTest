@@ -45,6 +45,7 @@ public class RunDynamicSuite
 			{
 				listeners.add("utility.RetryAnalyzer");
 			}
+
 			listeners.add("utility.TestListener");
 			listeners.add("org.utility.CutsomHTMLReport");
 			suite.setListeners(listeners);
