@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite thread-count="3" parallel="methods"
+	name="AccountSetupRegression">
+
+	<listeners>
+		<listener class-name="utility.TestListener"></listener>
+	<listener class-name="org.utility.CutsomHTMLReport"></listener>
+		<listener class-name="utility.RetryAnalyzer"></listener>
+	</listeners>
+
+	<parameter name="applicationName"
+		value="RegressionAccountSetup" />
+	<parameter name="browser" value="chromeheadless" />
+	<parameter name="runner" value="SELENIUM WEBDRIVER" />
+
+
+	<!-- ACCOUNT SETUP REGRESSION - BRAND ACCOUNT SCENARIOS -->
+
+	<test name="ACCOUNT SETUP REGRESSION - BRAND ACCOUNT SCENARIOS">
+		<parameter name="sheetname" value="Brand" />
+		<classes>
+			<class name="regression_AccountSetup.AccountSetup">
+				<methods>
+<!--					<include name="signUpPageNegativeScenarios" />-->
+<!--					<include name="selectAccountAndLicenseTypePageScenarios" />-->
+					 <include name="brandStartUp_AccountCreation" />
+					<include name="brandPRO_AccountCreation" />
+					<include name="brandEnterprise_AccountCreation" /> 
+					<include name="brandEnterpriseplus_AccountCreation" /> 
+					
+<!--					<include name="brandStartUpAct_KeyContactInfoScenarios" />-->
+<!--					<include name="brandPROAct_KeyContactInfoScenarios" />-->
+<!--					<include name="brandEnterpriseAct_KeyContactInfoScenarios" />-->
+<!--					<include name="brandAct_OtpResend" />-->
+<!--					<include name="brandStartUpAct_BrandDetailsScenarios" />-->
+<!--					<include name="brandProAct_BrandDetailsScenarios" />-->
+<!--					<include name="brandEnterpriseAct_BrandDetailsScenarios" />-->
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- ACCOUNT SETUP REGRESSION - AGENCY ACCOUNT SCENARIOS -->
+
+	<test name="ACCOUNT SETUP REGRESSION - AGENCY ACCOUNT SCENARIOS">
+		<parameter name="sheetname" value="Agency" />
+		<classes>
+			<class name="regression_AccountSetup.AccountSetup">
+				<methods>
+					 <include name="agencyStartUp_AccountCreation"></include>
+					<include name="agencyPRO_AccountCreation"></include>
+					<include name="agencyEnterprise_AccountCreation"></include>
+				        <include name="agencyEnterpriseplus_AccountCreation"></include>
+				
+<!--					<include name="agency_KeyContactInfoScenarios"></include>-->
+<!--					<include name="agency_KeyContactOtpResend"></include>-->
+<!--					<include name="agencyDetailsPageScenarios"></include>-->
+<!--					<include name="agencyStartupAct_BrandDetailsScenarios"></include>-->
+<!--					<include name="agencyPROAct_BrandDetailsScenarios"></include>-->
+<!--					<include name="agencyEnterpriseAct_BrandDetailsScenarios"></include>-->
+<!--					<include name="agencyAct_LocalizationScenarios"></include>-->
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- RESUL 5.0 ACCOUNT - LOGIN PAGE SCENARIOS -->
+
+	<test name="RESUL 5.0 ACCOUNT - LOGIN SCENARIOS">
+		<parameter name="sheetname" value="Sign-In" />
+		<classes>
+			<class name="regression_AccountSetup.LoginScenarios">
+				<methods>
+				   <!--<include name="loginWithValidCredentials"></include>
+					<include name="loginPage_NegativeScenario"></include> -->
+					<include name="forgetPasswordByExistingUser"></include>
+				<!--	<include name="validateLoginPage_CopyRightlinks"></include> -->
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+</suite>
+
+<!-- ACCOUNT SETUP REGRESSION -->

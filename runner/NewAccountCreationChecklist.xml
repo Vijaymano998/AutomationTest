@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite thread-count="3" parallel="methods" name="NewAccountCreationChecklist">
+	<listeners>
+		<listener class-name="utility.RetryAnalyzer"></listener>
+	</listeners>
+
+
+	<parameter name="applicationName" value="NewAccountCreationChecklist" />
+	<parameter name="Environment" value="Team" />
+	<parameter name="runner" value="SELENIUM WEBDRIVER" />
+
+
+    <test name="LOG IN">
+		<parameter name="browser" value="chrome" />
+		<parameter name="sheetname" value="Login" />
+		<classes>
+			<class name="newaccount_Checklist.NewAccountCreationChecklist">
+				<methods>
+					<include name="loginWithValidCredentials"></include>
+					<include name="accessAllMainMenu"></include>
+					<include name="accessAllMenuPreferences"></include>
+					<include name="UserRoles"></include>
+                    <include name="configurationSettingsNotificationVerify"></include>
+                    <include name="alertsandnotification"></include>
+                    <include name="allmenuincommunication"></include>
+                    <include name="accessAnalyticsListingPage"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="AUDIENCE UPLOAD">
+		<parameter name="browser" value="chrome" />
+		<parameter name="sheetname" value="Audience" />
+		<classes>
+			<class name="newaccount_Checklist.NewAccountCreationChecklist">
+				<methods>
+					<include name="audienceUploadTargetListSingleCSV"></include>
+					<include name="audienceUploadSeedListSingleCSV"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="LIST CREATION">
+		<parameter name="browser" value="chrome" />
+		<parameter name="sheetname" value="ListCreation" />
+		<classes>
+			<class name="newaccount_Checklist.NewAccountCreationChecklist">
+				<methods>
+                <include name="targetListCreateAndValidate"></include>
+                <include name="duplicateTargetList"></include>
+                <include name="editAndVerifyTargetList"></include>
+                <include name="targetListOneApproveRfaAll"></include>
+                <include name="DynamiclistCreation"></include>
+                <include name="DynamicListUsingWebsiteDevice"></include>
+                <include name="DynamicListUsingMobileDevice"></include>
+                <include name="DynamicListDuplicateEdit"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="AUDIENCE MASTERDATA MANAGEMENT">
+		<parameter name="browser" value="chrome" />
+		<parameter name="sheetname" value="Communication" />
+		<classes>
+			<class name="newaccount_Checklist.NewAccountCreationChecklist">
+				<methods>
+                    <include name="emailEventTriggerDaily"></include>
+                    <include name="smsEventTriggerDaily"></include>
+                    <include name="WhatsappEventTriggerDaily"></include>
+                    <include name="webpushEventTriggerDaily"></include>
+                    <include name="mobilePushEventTriggerDaily"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="CONSUMPTION">
+		<parameter name="browser" value="chrome" />
+		<parameter name="sheetname" value="Preferences" />
+		<classes>
+			<class name="newaccount_Checklist.NewAccountCreationChecklist">
+				<methods>
+                <include name="consumptionsEmail"></include>
+                <include name="consumptionsSms"></include>
+                <include name="consumptionsWebpush"></include>
+                <include name="consumptionsMobilepush"></include>
+                <include name="consumptionsQR"></include>
+                <include name="consumptionsWhatsApp"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+        
+        <test  name="RESUL 5.0 - Preferences Regression General">
+		<parameter name="browser" value="pwchrome" />
+		<parameter name="sheetname" value="Preferences" />
+		<classes>
+			<class name="newaccount_Checklist.NewAccountCreationChecklist">
+				<methods>
+				<include name="formsGenerator" />
+             </methods>
+			</class>
+		</classes>
+	</test>
+
+</suite> <!--
+AUDIENCE REGRESSION  -->

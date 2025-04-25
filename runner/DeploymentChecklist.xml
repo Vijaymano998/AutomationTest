@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite thread-count="4" parallel="methods" name="Deploymentchecklist">
+<!--	<listeners>-->
+<!--		<listener class-name="utility.RetryAnalyzer"></listener>-->
+<!--	</listeners>-->
+	<parameter name="applicationName" value="Deploymentchecklist" />
+	<parameter name="Environment" value="Team" />
+	<parameter name="runner" value="SELENIUM WEBDRIVER" />
+
+	<test name="DEPLOYMENT AUDIENCE - Selenium">
+		<parameter name="browser" value="chromeheadless" />
+		<parameter name="sheetname" value="Audience" />
+		<classes>
+			<class name="deploymentChecklist.DeploymentChecklist">
+				<methods>
+					<include name="invalidAudienceDownload"></include>
+					<include name="audienceUploadTargetListSingleCSV"></include>
+					<include name="audienceUploadAdhocListSingleCSV"></include>
+					<include name="audienceUploadSeedListSingleCSV"></include>
+					<include name="audienceUploadMatchInputListSingleCSV"></include>
+					<include name="audienceUploadSuppressionInputListSingleCSV"></include>
+					<include name="newAttributeCreationInColumnMappingPage"></include>
+					<include name="masterDataOverviewPortletsAndChartValidate"></include>
+					<include name="audienceMasterDataListAcquisitionTableValidation"></include>
+					<include name="audienceMasterDataAudienceListTableValidation"></include>
+					<include name="createPersona_From_MDM"></include>
+					<include name="targetListCreateAndValidate"></include>
+					<include name="targetListControlAndTargetGroup"></include>
+					<include name="targetListRecalculateLater_Now_later"></include>
+					<include name="duplicateTargetList"></include>
+					<include name="editAndVerifyTargetList"></include>
+					<include name="targetListDownload"></include>
+					<include name="targetListOneApproveRfaAll"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="DEPLOYMENT AUDIENCE - Playwright">
+		<parameter name="browser" value="pwchromeheadless" />
+		<parameter name="sheetname" value="Audience" />
+		<classes>
+			<class name="deploymentChecklist.DeploymentChecklist">
+				<methods>
+					<include name="pw_TL_childAttribute_InclusionTwoAndExclusion"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="DEPLOYMENT COMMUNICATION - Selenium">
+		<parameter name="browser" value="chromeheadless" />
+		<parameter name="sheetname" value="Communication" />
+		<classes>
+			<class name="deploymentChecklist.DeploymentChecklist">
+				<methods>
+					<include name="emailCommunicationCreateValidateTargetList"></include>
+					<include name="emailCommunicationCreateValidateAdhocList"></include>
+					<include name="emailCommunicationCreateValidateSeedList"></include>
+					<include name="emailCommunicationCreateValidateMatchList"></include>
+					<include name="emailCommunicationCreateValidateSupList"></include>
+					<include name="emailCommunicationTargetPreview"></include>
+					<include name="emailCommunicationAdhocPreview"></include>
+					<include name="emailCommunicationSeedPreview"></include>
+					<include name="emailCommunicationMatchPreview"></include>
+					<include name="emailCommunicationSupPreview"></include>
+					<include name="whatsAppWithoutImageBlast"></include>
+					<include name="whatsAppPreviewWithouImage"></include>
+					<include name="smsCommunicationCreateValidateTargetList"></include>
+					<include name="smsCommunicationCreateValidateAdhocList"></include>
+					<include name="smsCommunicationCreateValidateSeedList"></include>
+					<include name="smsCommunicationCreateValidateMatchList"></include>
+					<include name="smsCommunicationCreateValidateSupList"></include>
+					<include name="smsCommunicationTargetPreview"></include>
+					<include name="smsCommunicationAdhocPreview"></include>
+					<include name="smsCommunicationSeedPreview"></include>
+					<include name="smsCommunicationMatchPreview"></include>
+					<include name="smsCommunicationSupPreview"></include>
+					<include name="webpushCommunicationWithoutImage"></include>
+					<include name="webpushTestCommunicationWithoutImage"></include>
+					<include name="webpushCommunicationWithImage"></include>
+					<include name="webpushTestCommunicationWithImage"></include>
+					<include name="emailTextCommunicationBlast"></include>
+					<include name="mobileRichPushImageUrl"></include>
+					<include name="mobileRichPushImageUrlPreview"></include>
+					<include name="mobileRichPushWithoutImage"></include>
+					<include name="mobileRichPushWithoutImagePreview"></include>
+					<include name="QRCommwithoutSmartUrl"></include>
+					<include name="socialPostFB"></include>
+					<include name="socialPostTwitter"></include>
+					<include name="socialPostInstagram"></include>
+					<include name="socialPostLinkedin"></include>
+					<include name="paidMediaSetupAndBlast"></include>
+					<include name="smsEventTriggerDaily"></include>
+					<include name="emailEventTriggerDaily"></include>
+					<include name="eventTriggerEmailDailyTestPreview"></include>
+					<include name="eventTriggerSmsDailyTestPreview"></include>
+					<include name="subjectLineAnalysis"></include>
+					<include name="EmailSdcRfa"></include>
+					<include name="smsSDCRfa"></include>
+					<include name="advanceAnalytics"></include>
+					<include name="advanceAnalyticssms"></include>
+					<include name="emailCommunicationCreateRejectRFA"></include>
+					<include name="smsCommunicationCreateRejectRFA"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	
+</suite> <!--
+AUDIENCE REGRESSION  -->

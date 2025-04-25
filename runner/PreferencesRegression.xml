@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite thread-count="1" parallel="methods"
+	name="PreferencesRegression">
+
+	<listeners>
+		<listener class-name="utility.TestListener"></listener>
+	<listener class-name="org.utility.CutsomHTMLReport"></listener>
+		<listener class-name="utility.RetryAnalyzer"></listener>
+	</listeners>
+	<parameter name="applicationName"
+		value="RegressionPreferences" />
+	<parameter name="runner" value="SELENIUM WEBDRIVER" />
+
+	<test name="RESUL 5.0 - Preferences Regression NegativeScenario">
+		<parameter name="browser" value="chromeheadless" />
+		<parameter name="sheetname" value="PreferencesNegativeScenarios" />
+		<classes>
+			<class
+				name="regression_Preferences.PreferencesNegativeScenario">
+				<methods>
+					<include name="dataCatlogueNegativeValidation" />
+					<include name="goalsBenchmarkNegative" />
+					<include name="frequencyCapNegative" />
+					<include name="smtpEmailnegative" />
+					<include name="unSubNegative" />
+					<include name="smppSmsNegative" />
+					<include name="commWebNegative" />
+					<include name="smppWhatsappNegative" />
+					<include name="commMobileNegative" />
+					<include name="offerManagementNegative" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="RESUL 5.0 - Preferences Regression PW General">
+		<parameter name="browser" value="pwchrome" />
+		<parameter name="sheetname" value="PreferencesGeneral" />
+		<classes>
+			<class name="regression_Preferences.PreferencesRegression">
+				<methods>
+					<include name="pw_formsGenerator" />
+					<include name="pw_offermanagement" />
+					<include name="pw_newFormEmailTempleteBuilder" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="RESUL 5.0 - Preferences Regression General">
+		<parameter name="browser" value="chromeheadless" />
+		<parameter name="sheetname" value="PreferencesGeneral" />
+		<classes>
+			<class name="regression_Preferences.PreferencesRegression">
+				<methods>
+					<include name="preferencesUserroles" />
+					<include name="userManagement" />
+					<include name="communicationSmtpSetting" />
+					<include name="communicationSmppSetting" />
+					<include name="communicationWhatsappsetting" />
+					<include name="preferencesMyprofile" />
+					<include name="communicationSettingsWeb" />
+					<include name="communicationSettingsMobile" />
+					<include name="DataCatalogue" />
+					<include name="DataCatalogueAddAttribute" />
+					<include name="DataCatalogueCsvDownload" />
+					<include name="GridviewTableValidation" />
+					<include name="alertAndnotifications" />
+					<include name="profileAndAccountSettingsNotificationVerify" />
+					<include name="configurationSettingsNotificationVerify" />
+					<include name="audienceImportAndSegmentationNotificationVerify" />
+					<include name="frequencyCapValidate" />
+					<include name="accountsettings" />
+					<include name="goalsandBenchmark" />
+					<include name="emailFooter" />
+					<include name="communicationsettngsunsub" />
+					<include name="formCsvDownload" />
+					<include name="landingPageTemplateBuilder" />
+					<include name="consumptionEmailDownload" />
+					<include name="conusmptionAnalyticsEmailCountVerify" />
+					<include name="consumptionSmsDownload" />
+					<include name="conusmptionAnalyticsSmsCountVerify" />
+					<include name="consumptionQrDownload" />
+					<include name="conusmptionAnalyticsQrCountVerify" />
+					<include name="consumptionWhatsAppDownload" />
+					<include name="conusmptionAnalyticsWhatsAppCountVerify" />
+					<include name="dataExchange" />
+					<include name="audienceScoreValidation" />
+					<include name="inVoices" />
+					<include name="licenseInfo" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	
+
+</suite> 

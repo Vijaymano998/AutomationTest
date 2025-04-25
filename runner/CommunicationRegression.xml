@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite thread-count="3" parallel="methods"
+	name="CommunicationRegression" preserve-order="true">
+			<listeners>
+		<listener class-name="utility.TestListener"></listener>
+	<listener class-name="org.utility.CutsomHTMLReport"></listener>
+		<listener class-name="utility.RetryAnalyzer"></listener>
+	</listeners>
+	<parameter name="applicationName"
+		value="RegressionCommunication" />
+	<parameter name="runner" value="SELENIUM WEBDRIVER" />
+
+	<test name="RESUL 5.0 - COMMUNICATION REGRESSION" preserve-order="true">
+		<parameter name="browser" value="chromeheadless" />
+		<parameter name="sheetname"
+			value="CommunicationEmailScenario" />
+		<classes>
+			<class
+				name="regression_Communication.CommunicationEmailScenarios">
+				<methods>
+
+					<!-- EMAIL TESTS -->
+                    <include name="advanceAnalytics"/>
+                    <include name="emailCommunicationAdhocPreview"/>
+                    <include name="emailCommunicationCreateRejectRFA"/>
+                    <include name="emailCommunicationCreateValidateAdhocList"/>
+                    <include name="emailCommunicationCreateValidateMatchList"/>
+                    <include name="emailCommunicationCreateValidateSeedList"/>
+                    <include name="emailCommunicationCreateValidateSupList"/>
+                    <include name="emailCommunicationCreateValidateTargetList"/>
+                    <include name="emailCommunicationLimitList"/>
+                    <include name="emailCommunicationMatchPreview"/>
+                    <include name="emailCommunicationSeedPreview"/>
+                    <include name="emailCommunicationSplitABC"/>
+                    <include name="emailCommunicationSplitABCScheduleandEdit"/> 
+                    <include name="emailCommunicationSupPreview"/>
+                    <include name="emailCommunicationTargetPreview"/>
+                    <include name="emailCommunicationTemplate"/>
+                    <include name="emailCommunicationTemplateTestPreview"/>
+                    <include name="emailDuplicateCommunictionValidate"/>
+                    <include name="emailEventTriggerDaily"/>
+                    <include name="emailEventTriggerDailyRfa"/>
+                    <include name="emailEventTriggerRejectRfa"/>
+                    <include name="emailEventTriggertestPreview"/>
+                    <include name="EmailSdcRfa"/>
+                    <include name="emailTemplateEventTriggertestPreview"/>
+                    <include name="emailTextCommunicationBlast"/>
+                    <include name="emailTextCommunicationregression"/>
+                    <include name="emailTextCommunicationTest"/>
+                    <include name="emailTextEventTriggertestPreview"/>
+                    <include name="emailTriggerComm"/>
+                    <include name="emailTriggerDailyComm"/>
+                    <include name="eventTriggerEmailDailyTestPreview"/>
+                  <!--   <include name="subjectLineAnalysis"/> -->
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="RESUL 5.0 - COMMUNICATION REGRESSION-SMS">
+		<parameter name="browser" value="chromeheadless" />
+		<parameter name="sheetname"
+			value="CommunicationEmailScenario" />
+		<classes>
+			<class
+				name="regression_Communication.CommunicationSmsScenarios">
+				<methods>
+					
+                    <!-- SMS TESTS -->
+                    <include name="advanceAnalyticssms"/>
+                    <include name="CommunicationSMSScrubbed"/>
+                    <include name="eventTriggerSmsDailyTestPreview"/>
+                    <include name="smsCommunicationAdhocPreview"/>
+                    <include name="smsCommunicationCreateRejectRFA"/>
+                    <include name="smsCommunicationCreateValidateAdhocList"/>
+                    <include name="smsCommunicationCreateValidateMatchList"/>
+                    <include name="smsCommunicationCreateValidateSeedList"/>
+                    <include name="smsCommunicationCreateValidateSupList"/>
+                    <include name="smsCommunicationCreateValidateTargetList"/>
+                    <include name="smsCommunicationLimitList"/>
+                    <include name="smsCommunicationMatchPreview"/>
+                    <include name="smsCommunicationRegression"/>
+                    <include name="smsCommunicationSeedPreview"/>
+<!--                     <include name="smsCommunicationSplitABDraftCreate"/> -->
+                     <include name="smsCommunicationSupPreview"/>
+                    <include name="smsCommunicationTargetPreview"/>
+                    <include name="smsEventTriggerDaily"/>
+                    <include name="smsEventTriggerDailyRfa"/>
+                    <include name="smsEventTriggerRFAReject"/>
+                    <include name="smsSDCRfa"/>
+                    <include name="smsTestpreviewET"/>
+                    <include name="smsTriggerComm"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="RESUL 5.0 - COMMUNICATION MOBILEPUSH REGRESSION">
+		<parameter name="browser" value="chromeheadless" />
+		<parameter name="sheetname"
+			value="CommunicationMobilePushScenario" />
+		<classes>
+			<class
+				name="regression_Communication.CommunicationMobilePushScenario">
+				<methods>
+					   <!-- MOBILE PUSH TESTS -->
+                   <include name="mobileInAppInboxAllOFF"/>
+                    <include name="MobileinAppmessage"/>
+                   <!--  <include name="mobilePushSplit"/> -->
+                    <include name="mobileRichPushImageUrl"/>
+                    <include name="mobileRichPushImageUrlPreview"/>
+                    <include name="mobileRichPushWithoutImage"/>
+                    <include name="mobileRichPushWithoutImagePreview"/>
+                    <include name="mpEventregression"/>
+                    <include name="mpimportregression"/>
+<!--                     <include name="mpSplitABCDCreateandDelete"/>
+ -->
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="RESUL 5.0 - COMMUNICATION REGRESSION-Web Push">
+		<parameter name="browser" value="chromeheadless" />
+		<parameter name="sheetname"
+			value="CommunicationEmailScenario" />
+		<classes>
+			<class
+				name="regression_Communication.CommunicationWebPushScenarios">
+				<methods>
+					 <!-- WEB PUSH TESTS -->
+                    <include name="advanceAnalyticsWebpush"/>
+                    <include name="TriggerCommwebpushDaily"/>
+                    <include name="TriggerCommwebpushImmediate"/>
+                    <include name="webpushCommunicationRegression"/>
+                    <include name="webpushCommunicationWithImage"/>
+                    <include name="webpushCommunicationWithoutImage"/>
+                    <include name="webpushDailyBlastregression"/>
+                    <include name="webpushTestCommunicationAlertRichpsuh"/>
+                    <include name="webpushTestCommunicationAlertRichpsuhTest"/>
+                    <include name="webpushTestCommunicationScheduleWithImportZip"/>
+                    <include name="webpushTestCommunicationWithImage"/>
+                    <include name="webpushTestCommunicationWithImportZip"/>
+                    <include name="webpushTestCommunicationWithoutImage"/>			
+                    	</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="RESUL 5.0 - COMMUNICATION REGRESSION-WhatsAPP">
+		<parameter name="browser" value="chromeheadless" />
+		<parameter name="sheetname"
+			value="CommunicationEmailScenario" />
+		<classes>
+			<class
+				name="regression_Communication.CommunicationWhatsAppScenarios">
+				<methods>
+					
+                    <!-- WHATSAPP TESTS -->
+                   <include name="TriggerCommWhatsappDaily"/>
+                    <include name="TriggerCommWhatsappImmediate"/>
+                    <include name="WhatsappDailyBlast"/>
+                    <include name="WhatsappDailyBlastregression"/>
+                    <include name="WhatsappDailyBlastTestPrevieew"/>
+                    <include name="whatsAppPreviewWithouImage"/>
+                    <include name="whatsAppRegressionTests"/>
+                    <include name="whatsAppWithoutImageBlast"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="RESUL 5.0 - COMMUNICATION REGRESSION-QR">
+		<parameter name="browser" value="chromeheadless" />
+		<parameter name="sheetname"
+			value="CommunicationQR" />
+		<classes>
+			<class name="regression_Communication.CommunicationQRScenario">
+				<methods>
+					  <!-- QR TESTS -->
+                    <include name="QRCommwithoutSmartUrl"/>
+                    <include name="QRCommwithSmartUrl"/>
+<!--                     <include name="qrCreateAndValidate"/> -->
+                    <include name="qrSMSCommunicationCreate"/>
+                    <include name="qrTextCommunicationCreate"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="RESUL 5.0 - COMMUNICATION REGRESSION-Social Post">
+		<parameter name="browser" value="chromeheadless" />
+		<parameter name="sheetname"
+			value="CommunicationEmailScenario" />
+		<classes>
+			<class
+				name="regression_Communication.CommunicationSoicalPostScenarios">
+				<methods>
+					 <include name="paidMediaSetupAndBlast"/>
+                    <include name="socialPostFacebookRegression"/>
+                    <include name="socialPostFB"/>
+                    <include name="socialPostInstagram"/>
+                    <include name="socialPostLinkedin"/>
+                    <include name="socialPostTwitter"/>
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="RESUL 5.0 - COMMUNICATION Listing Page REGRESSION">
+		<parameter name="browser" value="chromeheadless" />
+		<parameter name="sheetname"
+			value="CommunicationEmailScenario" />
+		<classes>
+			<class
+				name="regression_Communication.CommunicationListingpageScenario">
+				<methods>
+					   <!-- Listing Page TESTS -->
+                    <include name="allCommunicationValidation"/>
+                    <include name="communicationEditAndVerify"/>
+                    <include name="communicationGalleryPage"/>
+                    <include name="communicationItemsPerPage"/>
+                    <include name="CommunicationPlanner"/>
+                    <include name="CommunicationPlannerNewcommunication"/>
+                    <include name="communicationPlannerPage"/>
+                    <include name="communicationScheduledEditAndVerify"/>
+                    <include name="communicationSubStatusCheck"/>
+                    <include name="deferredDeepLinkAndroidAndIos"/>
+                    <include name="listingPage_AllTimeDateFilter"/>
+                    <include name="listingPage_CustomRangeDateFilter"/>
+                    <include name="listingPage_Last30DaysDateFilter"/>
+                    <include name="listingPage_Last7DaysDateFilter"/>
+                    <include name="listingPageScenarios"/>
+                    <include name="listingPageSearchBoxScenarios"/>
+                    <include name="mdcPlanPageScenarios"/>
+                    <include name="sdcPlanPageScenarios"/>
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- <test name="RESUL 5.0 - COMMUNICATION REGRESSION-Negative">
+		<parameter name="browser" value="pwchrome" />
+		<parameter name="sheetname"
+			value="CommunicationNegativeScenario" />
+		<classes>
+			<class name="regression_Communication.CommunicationNegativeScenario">
+				<methods>
+					   Negative Scenario TESTS 
+                     <include name="CommunicationAuthoringPageEmailNegativeScenario"/>
+                    <include name="CommunicationAuthoringPageMessageNegativeScenario"/>
+                    <include name="CommunicationNotificationNegativeScenario"/>
+                    <include name="CommunicationPlannigPageNegativeScenario"/>
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+</suite> 
