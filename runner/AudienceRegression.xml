@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite thread-count="4" parallel="methods" name="AudienceRegression">
+	<listeners>
+		<listener class-name="utility.TestListener"></listener>
+	<listener class-name="org.utility.CutsomHTMLReport"></listener>
+		<listener class-name="utility.RetryAnalyzer"></listener>
+	</listeners>
+	<parameter name="applicationName" value="RegressionAudience" />
+	<parameter name="runner" value="SELENIUM WEBDRIVER" />
+
+
+<test name="AUDIENCE DYNAMICLIST" preserve-order="true">
+		<parameter name="sheetname" value="DynamicCreation" />
+		<classes>
+			<class name="regression_Audience.DynamicListScenarios">
+				<methods>
+					<include name="advanceSearch" />
+					<include name="dynamiclistCreation" />
+					<include name="dynamicListEdit" />
+					<include name="dynamicListDuplicate" />
+					<include name="dynamicUpto8Levels" />
+					<include name="dynamicSubscriptonForm" />
+					<include name="group1AndGroup2" />
+					<include name="dynamiclistexclusion" />
+					<include name="dynamicRFA" />
+					<include name="dynamicListMoreInfo" />
+					<include name="dynamicListEncodeValue" />
+					<include name="dynamicListNegativeScenarios" />
+					<include name="dynamicListUsingWebsiteBrowser" />
+					<include name="dynamicListUsingWebsiteCustomEvents" />
+					<include name="dynamicListUsingWebsiteCustomEventsdate" />
+					<include name="dynamicListUsingWebsiteDevice" />
+					<include name="dynamicListUsingWebsiteLanguage" />
+					<include name="dynamicListUsingWebsiteLastVisit" /> 
+					<include name="dynamicListUsingWebsiteLastVisitedPage" />
+					<include name="dynamicListUsingWebsiteLocation" />
+					<include name="dynamicListUsingWebsiteLogin" />
+					<include name="dynamicListUsingWebsiteNewVisitors" />
+					<include name="dynamicListUsingWebsiteNotificationDisabled" />
+					<include name="dynamicListUsingWebsiteOperatingSystem" />
+					<include name="dynamicListUsingWebsitePagedepth" />
+					<include name="dynamicListUsingWebsitePagein" />
+					<include name="dynamicListUsingWebsitePageout" />
+					<include name="dynamicListUsingWebsitePageviews" />
+					<include name="dynamicListUsingWebsiteReferralSource" />
+					<include name="dynamicListUsingWebsiteReturningVisitors" />
+					<include name="dynamicListUsingWebsiteSessionDuration" />
+					<include name="dynamicListUsingWebsiteSignUp" />
+					<include name="dynamicListUsingWebsiteTimeSpentOnPage" />
+					<include name="dynamicListUsingWebsiteTrafficSource" />
+					<include name="dynamicListUsingWebsiteUserType" />
+					<include name="dynamicListUsingWebsiteWhenUserVisitsSpecificPage" />
+					<include name="communicationExecuted" />
+					<include name="dynamicMobileApp" />
+					<include name="dynamicUsingTargetList" />
+					<include name="dynamicUsingAudienceBase" />
+					<include name="dynamicDateFilter" />
+					<include name="dynamicGridViewValidation" />
+					<include name="dynamiclistApprovalsettings" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="AUDIENCE MASTERDATA MANAGEMENT">
+		<parameter name="sheetname" value="AudienceUploadScenarios" />
+		<classes>
+			<class name="regression_Audience.AudienceUploadScenarios">
+				<methods>
+					<include name="audienceUploadTargetListSingleCSV"></include>
+					<include name="audienceUploadAdhocListSingleCSV"></include>
+					<include name="audienceUploadSeedListSingleCSV"></include>
+					<include name="audienceUploadMatchInputListSixCSV"></include>
+					<include name="audienceUploadSuppressionInputListSixCSV"></include>
+					<include name="audienceCSVFiveFilesUploadAdhcList"></include>
+					<include name="audienceCSVSixFilesUploadTrgtList"></include>
+					<include name="targetListAudienceUploadPageNegativeScenario"></include>
+					<include name="targetListColumnMappingPageNegativeScenario"></include>
+					<include name="adhocListAudienceUploadPageNegativeScenario"></include>
+					<include name="seedListAudienceUploadPageNegativeScenario"></include>
+					<include name="matchListAudienceUploadPageNegativeScenario"></include>
+					<include
+						name="suppressionListAudienceUploadPageNegativeScenario"></include>
+					<include name="newAttributeCreationInColumnMappingPage"></include>
+					<include name="newAttributeCreationNegativeScenarios"></include>
+					<include name="MDMOverviewScenarios"></include>
+					<include name="MDMOverviewEmailSmsAndNotification"></include>
+					<include
+						name="audienceMasterDataListAcquisitionTableValidation"></include>
+					<include name="createPersona_From_MDM"></include>
+					<include name="audience_grid_validation"></include>
+					<include name="invalidAudienceDownload"></include>
+					<include name="uploadManualEntry"></include>
+					<include name="csvUploadForChildAttributes"></include>
+					<include
+						name="newAttributeCreationForChildAttributeInColumnMappingPage"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="AUDIENCE TARGETLIST">
+		<parameter name="sheetname" value="TargetList" />
+		<classes>
+			<class name="regression_Audience.TargetListScenarios">
+				<methods>
+					<include name="targetListCreateAndValidate"></include>
+					<include name="TL_ParentAttribute_InclusionTwoandExclusion"></include>
+					<include name="targetListRecalculateLater_Now_later"></include>
+					<include name="TargetListCreationNegativeScenario"></include>
+					<include name="duplicateTargetList"></include>
+					<include name="editAndVerifyTargetList"></include>
+					<include name="moreInfoIconValidate"></include>
+					<include name="advanceDetailsSearch"></include>
+					<include name="downloadFullSegmentList"></include>
+<!--					<include name="downloadTargetlistshare"></include>-->
+					<include name="targetListControlAndTargetGroup"></include>
+					<include name="createMatchOutputList"></include>
+					<include name="createSuppressionOutputList"></include>
+					<include name="All_Audience_MoreInfo_Validate"></include>
+					<include name="advanceDetailsDownload"></include>
+					<include name="List_And_Grid_View_Validation"></include>
+					<include
+						name="TargetList_Max_25_DataValues_In_FilteredAttributes"></include>
+					<include name="targetListingPageAdvancedsearch"></include>
+					<include name="targetListOneApproveRfaAll"></include>
+					<include name="targetListOneRejectRfaAll"></include>
+					<include name="sampleTargetListDownload"></include>
+<!--										<include-->
+<!--					name="targetListThreeApproverApproveRfaAll"></include>-->
+<!--										<include-->
+<!--					name="targetListThreeApproveRfagetApproveAnyOne"></include>-->
+<!--										<include-->
+<!--					name="targetListThreeApproveRfagetApproveAnyTwo"></include>-->
+<!--										<include-->
+<!--					name="targetListThreeApproveRfagetRejectAnyTwo"></include>-->
+<!--										<include-->
+<!--					name="targetListThreeApproverRfaAllFollowHierarchy"></include>-->
+<!--										<include-->
+<!--					name="targetListTwoApproverApproveRfaAll"></include>-->
+<!--										<include-->
+<!--					name="targetListTwoApproveRfaGetApproveAnyOne"></include>-->
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AUDIENCE TARGETLIST-PLAYWRIGHT">
+		<parameter name="browser" value="pwchrome" />
+		<parameter name="sheetname" value="TargetList" />
+		<classes>
+			<class name="regression_Audience.TargetListScenarios">
+				<methods>
+					<include
+						name="pw_TL_childAttribute_InclusionTwoAndExclusion" />
+					<include
+						name="pw_TL_parentAndchildAttribute_InclusionTwoAndExclusion"></include>
+					<include
+						name="pw_TL_childAttribute_InclusionOneAndExclusion"></include>
+					<include
+						name="pw_TL_parentAttribute_InclusionOneAndExclusion"></include>
+					<include
+						name="pw_TL_parentAndchildAttribute_InclusionOneAndExclusion"></include>
+					<include name="pw_TL_removeInc_ExcGroup"></include>
+					<include name="pw_ValidateParentAttributeConditionAndValues"></include>
+					<include name="pw_ValidateChildAttributeConditionAndValues"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	
+
+</suite> <!--
+AUDIENCE REGRESSION  -->

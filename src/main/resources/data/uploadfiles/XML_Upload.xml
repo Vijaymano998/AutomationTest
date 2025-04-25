@@ -1,0 +1,5 @@
+<Recipients>
+	<Recipient ID="101" EmailID="vbnk20@resulticksmail.com" MobileNo="919876543210" Age="30"/>
+	<Recipient ID="102" EmailID="vbnk21@resulticksmail.com" MobileNo="919876543210" Age="30"/>
+	<Recipient ID="103" EmailID="vbnk22@resulticksmail.com" MobileNo="919876543210" Age="40"/>
+</Recipients>

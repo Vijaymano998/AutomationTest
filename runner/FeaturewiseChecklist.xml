@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite thread-count="3" parallel="methods" name="FeaturewiseChecklist">
+	<listeners>
+		<listener class-name="utility.RetryAnalyzer"></listener>
+	</listeners>
+	<parameter name="Environment" value="Team" />
+	<parameter name="runner" value="SELENIUM WEBDRIVER" />
+
+
+	<test name="ACCOUNT SETUP - ACCOUNT SCENARIOS">
+		<parameter name="applicationName" value="RegressionAccountSetup" />
+		<parameter name="browser" value="chromeheadless" />
+		<parameter name="sheetname" value="AccountSetup" />
+		<classes>
+			<class name="regression_AccountSetup.AccountSetup">
+				<methods>
+
+					<include name="brandEnterprise_AccountCreation" />
+					<include name="agencyPRO_AccountCreation"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test
+		name="AUDIENCE MASTERDATA MANAGEMENT">
+		<parameter name="applicationName" value="RegressionAudience" />
+		<parameter name="browser" value="chromeheadless" />
+		<parameter name="sheetname" value="AudienceUploadScenarios" />
+		<classes>
+			<class name="regression_Audience.AudienceUploadScenarios">
+				<methods>
+					<include name="MDMOverviewScenarios"></include>
+					<include name="createPersona_From_MDM"></include>
+					<include name="MDMOverviewEmailSmsAndNotification"></include>
+					<include
+						name="audienceMasterDataListAcquisitionTableValidation"></include>
+					<include name="audience_grid_validation"></include>
+					<include name="invalidAudienceDownload"></include>
+					<include name="uploadManualEntry"></include>
+					<include name="audienceCSVSixFilesUploadTrgtList"></include>
+					<include name="audienceUploadTargetListSingleCSV"></include>
+					<include name="audienceUploadAdhocListSingleCSV"></include>
+					<include name="audienceCSVFiveFilesUploadAdhcList"></include>
+					<include name="audienceUploadSeedListSingleCSV"></include>
+					<include name="audienceUploadMatchInputListSingleCSV"></include>
+					<include name="audienceUploadSuppressionInputListSingleCSV"></include>
+					<include name="csvUploadForChildAttributes"></include>
+					<include
+						name="newAttributeCreationForChildAttributeInColumnMappingPage"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test
+		name="AUDIENCE TARGETLIST UPLOAD">
+		<parameter name="applicationName" value="RegressionAudience" />
+		<parameter name="browser" value="chromeheadless" />
+		<parameter name="sheetname" value="TargetList" />
+		<classes>
+			<class name="regression_Audience.TargetListScenarios">
+				<methods>
+					<include name="targetListCreateAndValidate"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test
+		name="AUDIENCE TARGETLIST DUPLICATE">
+		<parameter name="applicationName" value="RegressionAudience" />
+		<parameter name="browser" value="chromeheadless" />
+		<parameter name="sheetname" value="TargetList" />
+		<classes>
+			<class name="regression_Audience.TargetListScenarios">
+				<methods>
+					<include name="duplicateTargetList"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="AUDIENCE TARGETLIST">
+		<parameter name="applicationName" value="RegressionAudience" />
+		<parameter name="browser" value="chromeheadless" />
+		<parameter name="sheetname" value="TargetList" />
+		<classes>
+			<class name="regression_Audience.TargetListScenarios">
+				<methods>
+					<include name="targetListReachRateValidation"></include>
+					<include name="targetListingPageAdvancedsearch"></include>
+					<include name="targetListControlAndTargetGroup"></include>
+					<include name="createMatchOutputList"></include>
+					<include name="createSuppressionOutputList"></include>
+					<include name="All_Audience_MoreInfo_Validate"></include>
+					<include name="targetListDownload"></include>
+					<include name="advanceDetailsSearch"></include>
+					<include name="List_And_Grid_View_Validation"></include>
+					<include name="targetListOneApproveRfaAll"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="COMMUNICATION ">
+		<parameter name="browser" value="chromeheadless" />
+		<parameter name="sheetname" value="Communication" />
+		<classes>
+			<class
+				name="regression_Communication.CommunicationDeploymentChecklist">
+				<methods>
+					<include name="emailCommunicationCreateValidateTargetList"></include>
+					<include name="emailCommunicationTargetPreview"></include>
+					<include name="smsCommunicationCreateValidateTargetList"></include>
+					<include name="smsCommunicationTargetPreview"></include>
+					<include name="emailTextCommunicationBlast"></include>
+					<include name="EmailSdcRfa"></include>
+					<include name="emailEventTriggerDailyRfa"></include>
+					<include name="emailEventTriggertestPreview"></include>
+					<include name="smsTestpreviewET"></include>
+					<include name="EmailSdcRfa"></include>
+					<include name="emailTextCommunicationTest"></include>
+					<include name="emailTextEventTriggertestPreview"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="COMMUNICATION ">
+		<parameter name="applicationName" value="RegressionCommunication" />
+		<parameter name="browser" value="chrome" />
+		<parameter name="sheetname" value="CommunicationEmailScenario" />
+		<classes>
+			<class
+				name="regression_Communication.CommunicationWebPushScenarios">
+				<methods>
+					<include name="webpushTestCommunicationWithImportZip"></include>
+					<include
+						name="webpushTestCommunicationScheduleWithImportZip"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+<test
+		name="DEPLOYMENT CHECKLIST AUDIENCE DYNAMICLIST" preserve-order="true">
+		<parameter name="browser" value="chrome" />
+		<parameter name="sheetname" value="DynamicCreation" />
+		<classes>
+			<class name="featurewise_Checklist.FeaturewiseChecklist">
+				<methods>
+					<include name="DynamiclistCreatePage" />
+					<include name="DynamicListUsingWebsiteBrowser" />
+					<include name="DynamicMobileApp" />
+					<include name="advanceSearch" />
+					<include name="DynamicUsingTargetList" />
+					<include name="dynamicSubscriptonForm" />
+					<include name="DynamicUsingAudienceBase" />
+					<include name="DynamicGridViewValidation" />
+					<include name="CommunicationExecuted" />
+					<include name="DynamicDateFilter" />
+					<include name="DynamicListEdit" />
+					<include name="DynamicListDuplicate" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+ </suite> <!--
+AUDIENCE REGRESSION -->

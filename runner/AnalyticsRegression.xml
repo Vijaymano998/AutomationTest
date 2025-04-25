@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite thread-count="3" parallel="methods" name="AnalyticsRegression">
+<!--		<listeners>-->
+<!--			<listener class-name="utility.RetryAnalyzer"></listener>-->
+<!--		</listeners>-->
+	<parameter name="applicationName" value="RegressionAnalytics" />
+	<parameter name="Environment" value="Team" />
+	<parameter name="runner" value="SELENIUM WEBDRIVER" />
+
+		<test name="AUDIENCE MASTERDATA MANAGEMENT">
+		<parameter name="browser" value="pwchrome" />
+		<parameter name="sheetname" value="AnalyticsListingPage" />
+		<classes>
+			<class name="regression_Analytics.AnalyticsEmailScenarios">
+				<methods>
+					<include name="pw_analyticsEmailScenarios"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

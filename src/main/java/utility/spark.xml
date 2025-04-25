@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extent-config>
+    <configuration>
+        <!-- Core Settings -->
+        <theme>standard</theme>
+        <encoding>utf-8</encoding>
+        <protocol>HTTPS</protocol>
+        <timelineEnabled>false</timelineEnabled>
+        <offlineMode>true</offlineMode>
+        <thumbnailForBase64>false</thumbnailForBase64>
+
+        <!-- Report Metadata -->
+        <documentTitle>AutomationReports</documentTitle>
+        <reportName>Resulticks</reportName>
+        <timeStampFormat>MMM dd, yyyy HH:mm:ss a</timeStampFormat>
+
+        <!-- Logo (customize the URL or use a local path) -->
+        <logo>src/main/resources/data/uploadfiles/RESUL_5.0_logo.png</logo>
+        <!-- or for local file: file:///C:/Users/yourname/logo.png -->
+
+        <!-- Optional Scripts and Styles (currently empty, can be customized) -->
+        <scripts>
+            <![CDATA[
+                // Custom JavaScript here
+            ]]>
+        </scripts>
+
+        <styles>
+            <![CDATA[
+                /* Custom CSS here */
+            ]]>
+        </styles>
+    </configuration>
+</extent-config>
